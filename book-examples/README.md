@@ -1,0 +1,1 @@
+Examples in this directory come from the [ostep-code repository](https://github.com/remzi-arpacidusseau/ostep-code) used in conjunction with the [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/) online textbook. Content is organized by chapters for easy access.

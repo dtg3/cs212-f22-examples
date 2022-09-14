@@ -13,8 +13,10 @@ struct vector {
 
 void push(struct vector* v, int i) {
     ++(v->size);
-    v->items = realloc(v->items, v->size);
+    
+    v->items = realloc(v->items, sizeof(int)*v->size);
     assert(v->items != NULL);
+    
     v->items[v->size - 1] = i;
 }
 
@@ -23,7 +25,7 @@ int pop(struct vector* v) {
 
     int value = v->items[v->size - 1];
     --(v->size);
-    v->items = realloc(v->items, v->size);
+    v->items = realloc(v->items, sizeof(int)*v->size);
 
     return value;
 }

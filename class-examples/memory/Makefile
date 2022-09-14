@@ -1,4 +1,4 @@
-all:
+all: heap memory-issues vector stack
 
 heap:
 	gcc heap.c -Wall -Werror -o heap

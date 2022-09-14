@@ -1,6 +1,10 @@
 /* 
     Simple Example to show memory issues that
     valgrind can help detect.
+
+    To run with valgrind, compile the program, and then
+    use the format:
+      valgrind ./memory-issues
 */
 
 #include <stdio.h>
@@ -16,7 +20,7 @@ char* save_string(const char* string) {
 
 // Create a new string exactly the right size for two strings
 char* concat_string(const char* left, const char* right) {
-    // +1 for null terminator ('\0' or 0)
+    // should have a +1 at the end for null terminator ('\0' or 0)
     size_t new_string_size = strlen(left) + strlen(right);
 
     // Like malloc, but fills the memory with 0's
@@ -38,6 +42,9 @@ int main(int argc, char *argv[]) {
 
     char *combined_string = concat_string(my_string, "bar");
     printf("%s\n", combined_string);
+
+    // Missing the frees to cleanup the memory
+    //  we received from save_string and concat_string
 
     return 0;
 }

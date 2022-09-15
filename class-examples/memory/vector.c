@@ -11,7 +11,7 @@ struct vector {
     int *items;
 };
 
-void push(struct vector* v, int i) {
+void push_back(struct vector* v, int i) {
     ++(v->size);
     
     v->items = realloc(v->items, sizeof(int)*v->size);
@@ -20,7 +20,7 @@ void push(struct vector* v, int i) {
     v->items[v->size - 1] = i;
 }
 
-int pop(struct vector* v) {
+int pop_back(struct vector* v) {
     assert(v->size > 0);
 
     int value = v->items[v->size - 1];
@@ -45,11 +45,11 @@ void free_vector(struct vector* v) {
 int main(int argc, char *argv[]) {
 
     struct vector my_vector = init_vector();
-    push(&my_vector, 10);
-    push(&my_vector, 40);
-    push(&my_vector, 90);
+    push_back(&my_vector, 10);
+    push_back(&my_vector, 40);
+    push_back(&my_vector, 90);
 
-    printf("%d\n", pop(&my_vector));
+    printf("%d\n", pop_back(&my_vector));
 
     free_vector(&my_vector);
 

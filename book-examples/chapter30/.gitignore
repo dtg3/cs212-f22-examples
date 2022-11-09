@@ -1,0 +1,11 @@
+.DS_Store
+.vscode
+*.o
+join
+join_spin
+join_modular
+join_no_lock
+join_no_state_var
+join_spin
+pc
+pc_single
